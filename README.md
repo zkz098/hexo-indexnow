@@ -1,5 +1,5 @@
 # hexo-indexnow
-[中文使用文档](https://www.kaitaku.xyz/404.html) \
+[中文使用文档](https://www.kaitaku.xyz/webbuild/hexo/indexnow/) \
 hexo-indexnow is a lightweight SEO (indexnow) plugin. \
 It provides a simple and easy way to submit a link to indexnow.
 ## start from zero
@@ -17,7 +17,7 @@ hexo_indexnow:
   txt_name: indexnow.txt # links file name
   apikey: xxxxxx # indexNow Apikey
   server: bing # The server that received the request
-			   # For example: bing, yandex, indexnow
+# For example: bing, yandex, indexnow
 
 deploy:
   - type: indexnow_url_submitter
