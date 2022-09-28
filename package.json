@@ -1,6 +1,6 @@
 {
   "name": "hexo-indexnow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use the indexnow protocol to push links to search engines to improve SEO",
   "main": "index.js",
   "repository": "https://github.com/zkz098/hexo-indexnow",
@@ -14,5 +14,14 @@
     "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-standard": "^5.0.0"
+  },
+  "keywords": [
+    "hexo",
+    "deployer",
+    "indexnow",
+    "seo"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
