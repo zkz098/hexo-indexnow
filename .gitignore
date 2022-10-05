@@ -25,4 +25,11 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
+/.pnp
+.pnp.js
+.pnp.cjs
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+yarn-error.log
 

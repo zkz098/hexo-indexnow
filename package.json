@@ -1,12 +1,11 @@
 {
   "name": "hexo-indexnow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Use the indexnow protocol to push links to search engines to improve SEO",
   "main": "index.js",
   "repository": "https://github.com/zkz098/hexo-indexnow",
   "author": "zkz098",
   "license": "MIT",
-  "private": false,
   "devDependencies": {
     "eslint": "^8.23.0",
     "eslint-config-standard": "^17.0.0",
