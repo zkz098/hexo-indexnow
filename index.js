@@ -1,3 +1,4 @@
+'use strict'
 /* global hexo */
 
 hexo.extend.generator.register('indexnow_url_generator', require('./lib/generator').generatorURLs)
