@@ -1,6 +1,6 @@
 {
   "name": "hexo-indexnow",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Use the indexnow protocol to push links to search engines to improve SEO",
   "main": "index.js",
   "repository": "https://github.com/zkz098/hexo-indexnow",
