@@ -6,13 +6,20 @@
   "repository": "https://github.com/zkz098/hexo-indexnow",
   "author": "zkz098",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
+    "@types/hexo": "^3.8.8",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
     "eslint": "^8.23.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.1",
-    "eslint-plugin-standard": "^5.0.0"
+    "typescript": "^4.9.3"
   },
   "keywords": [
     "hexo",

@@ -1,4 +1,5 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
   env: {
     browser: true,
     commonjs: true,
@@ -6,11 +7,16 @@ module.exports = {
     node: true
   },
   extends: [
-    'standard'
+    'standard',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  plugins: [
+    '@typescript-eslint'
   ],
   parserOptions: {
     ecmaVersion: 12
   },
   rules: {
+    '@typescript-eslint/no-explicit-any': 'off'
   }
 }

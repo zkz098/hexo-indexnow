@@ -1,35 +1,12 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Dependency directories
+.DS_Store
+Thumbs.db
 node_modules/
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Yarn Integrity file
-.yarn-integrity
+.idea
 /.pnp
 .pnp.js
 .pnp.cjs
 .yarn/cache
 .yarn/unplugged
 .yarn/install-state.gz
-yarn-error.log
-
+yarn-error.log*
+yarn.lock
