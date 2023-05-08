@@ -1,6 +1,47 @@
-import pathFn = require('path')
-import fs = require('fs')
-import readline = require('readline')
+import pathFn from 'node:path'
+import fs from 'node:fs'
+import readline from 'node:readline'
+
+function generatorURLs (locals) {
+  const log = this.log
+  const config = this.config
+  let count = config.hexo_indexnow.count
+  const urlsPath = config.hexo_indexnow.txt_name
+  const linkReplace = config.hexo_indexnow.replace
+  if (count === 'latest') {
+    count = 1
+  } else if (!count) {
+    return
+  }
+  log.info(`Generating urls for last ${count} posts`)
+  const urls = [].concat(locals.posts.toArray())
+    .map((post) => {
+      return {
+        date: post.updated || post.date,
+        permalink: post.permalink
+      }
+    })
+    .sort((a, b) => {
+      return b.date - a.date
+    })
+    .slice(0, count)
+    .join('\n')
+  log.info(`Posts urls generated in ${urlsPath} \n ${urls}`)
+  return {
+    path: urlsPath,
+    data: urls
+  }
+}
+
+function apiKey (locals) {
+  const log = this.log
+  const apiKey = this.config.hexo_indexnow.apikey
+  log.info('Indexnow apikey generated')
+  return {
+    path: apiKey,
+    data: apiKey
+  }
+}
 
 function FileReadline (ReadName:string, callback:(arr:any[])=>void) {
   const fRead = fs.createReadStream(ReadName, 'utf8')
@@ -16,7 +57,7 @@ function FileReadline (ReadName:string, callback:(arr:any[])=>void) {
   })
 }
 
-module.exports = function (args) {
+function submitURLs (args) {
   const log = this.log
   const config = this.config
   const publicDir = this.public_dir
@@ -37,7 +78,7 @@ module.exports = function (args) {
       IndexServer = 'https://search.seznam.cz/indexnow'
       break
     default:
-      log.info('unknown search engine,use indexnow.org')
+      log.info('Unknown search engine,use indexnow.org')
       IndexServer = 'https://api.indexnow.org/indexnow'
   }
   const apiKey = config.hexo_indexnow.apikey
@@ -50,25 +91,28 @@ module.exports = function (args) {
       keyLocation: `${site}/${apiKey}`,
       urlList: data
     }
-    import('node-fetch').then((nodeFetch) => {
-      const Fetch = fetch || nodeFetch.default
-      Fetch(
-        IndexServer,
-        {
-          method: 'post',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(submitData)
-        }
-      ).then((r) => {
-        if (r.ok) {
-          log.info('indexnow submitted')
-        } else {
-          log.info('indexnow error')
-          log.info(r)
-        }
-      }).catch((e) => {
-        throw Error(e)
-      })
+    fetch(
+      IndexServer,
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(submitData)
+      }
+    ).then((r) => {
+      if (r.ok) {
+        log.info('indexnow submitted')
+      } else {
+        log.info('indexnow error')
+        log.info(r)
+      }
+    }).catch((e) => {
+      throw Error(e)
     })
   })
+}
+
+export {
+  generatorURLs,
+  apiKey,
+  submitURLs
 }

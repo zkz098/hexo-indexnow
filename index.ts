@@ -1,9 +1,7 @@
 'use strict'
 /* global hexo */
+import { generatorURLs, apiKey, submitURLs } from './lib/indexnow'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-hexo.extend.generator.register('indexnow_url_generator', require('./lib/generator').generatorURLs)
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-hexo.extend.generator.register('indexnow_key_generator', require('./lib/generator').apiKey)
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-hexo.extend.deployer.register('indexnow_url_submitter', require('./lib/indexnow'))
+hexo.extend.generator.register('indexnow_url_generator', generatorURLs)
+hexo.extend.generator.register('indexnow_key_generator', apiKey)
+hexo.extend.deployer.register('indexnow_url_submitter', submitURLs)
