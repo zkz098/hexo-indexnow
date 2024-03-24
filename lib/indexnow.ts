@@ -25,6 +25,7 @@ function generatorURLs (locals) {
       return b.date - a.date
     })
     .slice(0, count)
+    .map((post) => post.permalink)
     .join('\n')
   log.info(`Posts urls generated in ${urlsPath} \n ${urls}`)
   return {
