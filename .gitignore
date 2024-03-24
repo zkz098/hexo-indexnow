@@ -10,3 +10,5 @@ node_modules/
 .yarn/install-state.gz
 yarn-error.log*
 yarn.lock
+pnpm-lock.yaml
+*.js
