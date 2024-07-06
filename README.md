@@ -17,7 +17,8 @@ hexo_indexnow:
   txt_name: indexnow.txt # links file name
   apikey: xxxxxx # indexNow Apikey
   server: bing # The server that received the request
-# For example: bing, yandex, indexnow
+               # For example: bing, yandex, indexnow
+  log_urls: false # Log url list on output log
 
 deploy:
   - type: indexnow_url_submitter
