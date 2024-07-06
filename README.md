@@ -1,3 +1,5 @@
+**[No Longer Actively Maintained] I have lost interest in maintaining Hexo-related projects, and thus I will no longer continue to maintain this project. If you wish to continue maintaining it, you can create a Fork.**
+
 # hexo-indexnow
 [中文使用文档](https://www.kaitaku.xyz/webbuild/hexo/indexnow/) \
 hexo-indexnow is a lightweight SEO (indexnow) plugin. \
